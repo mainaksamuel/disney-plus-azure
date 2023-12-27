@@ -55,7 +55,7 @@ export default async function OpenAIAzureSuggestion({
         <p className="text-sm text-purple-400">
           Azure OpenAI Assistant Suggests:
         </p>
-        <p className="italic text-xl">{completion?.content}</p>
+        <p className="italic text-xl">&ldquo;{completion?.content}&rdquo;</p>
       </div>
     </div>
   );

@@ -39,7 +39,7 @@ export default function AISuggestion({ term }: AISuggestionProps) {
           <p className="text-sm text-gray-400">
             AI (Azure Functions) Asisstant Suggests:
           </p>
-          <p className="italic text-xl">"{data.message}"</p>
+          <p className="italic text-xl"> &ldquo;{data.message}&rdquo;</p>
         </div>
       </>
     );
