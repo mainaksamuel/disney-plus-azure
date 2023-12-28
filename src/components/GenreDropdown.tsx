@@ -27,20 +27,23 @@ export default async function GenreDropdown() {
   const response = await fetch(url, options);
   const data = (await response.json()) as Genres;
 
-  /* console.log("GENRES: ", data); */
-
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex items-center">
-        Genre
-        <ChevronDown className="ml-1" />
+      <DropdownMenuTrigger
+        asChild
+        className="flex justify-center items-center text-white"
+      >
+        <button>
+          Genre <ChevronDown className="ml-1" />
+        </button>
       </DropdownMenuTrigger>
+
       <DropdownMenuContent>
         <DropdownMenuLabel>Select a Genre</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {data.genres &&
           data.genres.map((genre: Genre) => (
-            <DropdownMenuItem key={genre.id}>
+            <DropdownMenuItem key={genre.id} className="cursor-pointer">
               <Link href={`/genre/${genre.id}?genre=${genre.name}`}>
                 {genre.name}
               </Link>
